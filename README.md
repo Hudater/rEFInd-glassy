@@ -1,6 +1,37 @@
 # Glassy
 ## A minimalistic rEFInd theme
+### This fork has customized background, icons and installation steps according to [my setup](http://docs.haops.dev/linux/desktop/#refind-bootloader) and preferences
 
+### Make sure to change your directory paths accordingly
+### Usage
+
+1. Clone this repo
+```bash
+git clone git@github.com:Hudater/rEFInd-glassy.git
+```
+
+2. Make `themes` directory in `/boot/`
+```bash
+sudo mkdir /boot/EFI/BOOT/themes
+```
+
+3. Copy theme inside `themes` directory
+```bash
+sudo cp -r rEFInd-glassy /boot/EFI/BOOT/themes
+```
+
+4. Edit `refind.conf`
+```bash
+sudo tee -a /boot/EFI/BOOT/refind.conf > /dev/null <<EOT
+resolution 1920 1080
+include themes/rEFInd-glassy/theme.conf
+EOT
+```
+
+#### TIP
+To remove theme from `/boot`, run `sudo rm -r /boot/EFI/BOOT/themes/rEFInd-glassy`
+
+## Documentation by [Original Author](https://github.com/Pr0cella)
 ![Glassy](preview.png)
 
 ### Usage
